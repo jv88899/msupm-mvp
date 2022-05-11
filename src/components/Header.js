@@ -6,10 +6,18 @@ import MenuIcon from "./MenuIcon";
 import NavigationMenu from "./NavigationMenu";
 import SearchMenu from "./SearchMenu";
 
-export default function Header({ menuIsVisible, setMenuIsVisible }) {
+export default function Header({
+  menuIsVisible,
+  setMenuIsVisible,
+  searchFormIsVisible,
+  setSearchFormIsVisible
+}) {
   return (
     <>
-      <SearchMenu />
+      <SearchMenu
+        searchFormIsVisible={searchFormIsVisible}
+        setSearchFormIsVisible={setSearchFormIsVisible}
+      />
       <NavigationMenu
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}
@@ -23,6 +31,7 @@ export default function Header({ menuIsVisible, setMenuIsVisible }) {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
+            onClick={() => setSearchFormIsVisible(!searchFormIsVisible)}
           >
             <path
               strokeLinecap="round"

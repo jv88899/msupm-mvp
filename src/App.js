@@ -9,6 +9,7 @@ import Statistics from "./pages/Statistics";
 
 export default function App() {
   const [menuIsVisible, setMenuIsVisible] = React.useState(false);
+  const [searchFormIsVisible, setSearchFormIsVisible] = React.useState(false);
 
   return (
     <Router>
@@ -16,6 +17,8 @@ export default function App() {
         <Header
           menuIsVisible={menuIsVisible}
           setMenuIsVisible={setMenuIsVisible}
+          searchFormIsVisible={searchFormIsVisible}
+          setSearchFormIsVisible={setSearchFormIsVisible}
         />
       </>
       <Routes>
